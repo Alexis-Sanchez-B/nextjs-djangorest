@@ -10,26 +10,16 @@ function FormTarea() {
         e.preventDefault()
 
         // Esperar la respuesta de fetch
-        const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/tareas/`, {
+        //const res = 
+        await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/tareas/`, {
             method: 'POST',
             body: JSON.stringify({ titulo, descripcion }),
             headers: {
                 'Content-Type': 'application/json'
             }
         })
-
-        // Verificar si la respuesta fue exitosa
-        if (!res.ok) {
-            // Si no es exitosa, lanzar un error
-            console.error('Error en la solicitud:', res.statusText)
-            return
-        }
-
-        // Obtener los datos en formato JSON
-        const data = await res.json()
-
-        // Ver los datos en la consola
-        console.log(data)
+        //const data = await res.json()
+        //console.log(data)
     }
 
     return (
